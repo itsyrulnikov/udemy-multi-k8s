@@ -13,10 +13,10 @@ after_success:
     - docker build -t itsyrulnikov/udemy-multi-nginx ./nginx
     - docker build -t itsyrulnikov/udemy-multi-server ./server
     - docker build -t itsyrulnikov/udemy-multi-worker ./worker
+    
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" -- password-stdin
 
-- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" -- password-stdin
-
-- docker push itsyrulnikov/udemy-multi-client
-- docker push itsyrulnikov/udemy-multi-nginx
-- docker push itsyrulnikov/udemy-multi-server
-- docker push itsyrulnikov/udemy-multi-worker
+    - docker push itsyrulnikov/udemy-multi-client
+    - docker push itsyrulnikov/udemy-multi-nginx
+    - docker push itsyrulnikov/udemy-multi-server
+    - docker push itsyrulnikov/udemy-multi-worker
