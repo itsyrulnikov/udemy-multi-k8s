@@ -12,5 +12,5 @@ docker push itsyrulnikov/udemy-multi-worker:$SHA
 
 kubectl apply -f k8s
 kubectl set image deployments/server-deployment server=itsyrulnikov/udemy-multi-server:$SHA
-kubectl set image deployments/worker-deployment server=itsyrulnikov/udemy-multi-worker:$SHA
-kubectl set image deployments/client-deployment server=itsyrulnikov/udemy-multi-client:$SHA
+kubectl set image deployments/worker-deployment worker=itsyrulnikov/udemy-multi-worker:$SHA
+kubectl set image deployments/client-deployment client=itsyrulnikov/udemy-multi-client:$SHA
